@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import InnerComponentDefault from "./components/InnerComponentDefault";
 import { InnerComponentNamed } from "./components/InnerComponentNamed";
 import "../style/main.scss";
+import ComplicatedLogicComponent from "./components/ComplicatedLogicComponent";
 
 export const RollupComponent = () => {
   const [myState, setMyState] = useState(123);
@@ -14,6 +15,7 @@ export const RollupComponent = () => {
       <p> This uses all components together</p>
       <InnerComponentDefault />
       <InnerComponentNamed />
+      <ComplicatedLogicComponent prop1="b" prop3={myState} prop4={() => console.log("asd")} />
     </div>
   );
 };

@@ -3,3 +3,4 @@ export { default as InnerComponentDefault } from "./components/InnerComponentDef
 export { default as InnerComponentImageHtml } from "./components/InnerComponentImageHtml";
 export { default as InnerComponentImageCss } from "./components/InnerComponentImageCss";
 export { default as ComponentThatUsesDifferentCssStyle } from "./components/ComponentThatUsesDifferentCssStyle";
+export { default as ComplicatedLogicComponent } from "./components/ComplicatedLogicComponent";

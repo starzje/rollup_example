@@ -1,0 +1,79 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    // module resolution strategy specifies how the compiler resolves
+    // module import statements in the source code ('node','classic')
+    "moduleResolution": "node",
+    // When using TypeScript with Babel, the target option in the compilerOptions
+    // should be set to "esnext" to ensure that TypeScript produces code that is
+    // compatible with the latest ECMAScript syntax.
+    //
+    // This is because Babel is responsible for transpiling the TypeScript code to
+    // a format that is compatible with the target environment, and it can handle
+    // any necessary downleveling to ensure that the resulting code works in a wide
+    // range of browsers and JavaScript environments.
+    //
+    // Setting the target option to esnext also ensures that TypeScript doesn't apply
+    // any unnecessary downleveling or optimizations that may interfere with Babel's
+    // transpilation process. Additionally, it allows you to take advantage of the
+    // latest ECMAScript features in your TypeScript code, which can help you write
+    // more concise and expressive code.
+    "target": "esnext",
+    // When using TypeScript with Babel, the module option in the compilerOptions section
+    // of tsconfig.json should be set to esnext or commonjs, depending on how Babel is
+    // configured to handle modules.
+    //
+    // If Babel is configured to handle modules using the CommonJS format (i.e. using
+    // the @babel/preset-env preset with the modules option set to commonjs),
+    // then you should set the module option in tsconfig.json to commonjs.
+    // This will ensure that TypeScript generates CommonJS-style module code that
+    // is compatible with the way that Babel handles modules.
+    //
+    // If, on the other hand, Babel is configured to handle modules using the ECMAScript
+    // Modules (ESM) format (i.e. using the @babel/preset-env preset with the modules
+    // option set to false or auto), then you should set the module option in tsconfig.json
+    // to esnext. This will ensure that TypeScript generates ECMAScript-style module code
+    // that is compatible with the way that Babel handles modules.
+    //
+    // In general, it's important to ensure that the module option in tsconfig.json is set
+    // to a value that is compatible with the way that Babel is configured to handle modules,
+    // to avoid any compatibility issues between TypeScript and Babel.
+    "module": "esnext",
+    // create declaration files in output folder
+    "declaration": true,
+    "declarationDir": "./dist",
+    // The "esModuleInterop" option enables interoperability between CommonJS and ES Modules.
+    //
+    // When using TypeScript with Babel, the esModuleInterop option in the compilerOptions
+    // section of tsconfig.json should be set to true.
+    //
+    // This option enables TypeScript to generate code that is compatible with Babel's handling
+    // of ES modules, which is necessary to ensure that the resulting code works correctly.
+    // When esModuleInterop is set to true, TypeScript generates code that uses Babel's helper
+    // functions to handle the import and export statements in your code.
+    //
+    // Without esModuleInterop, TypeScript generates code that uses its own helper functions to
+    // handle import and export statements, which can cause compatibility issues when used with Babel.
+    // By setting esModuleInterop to true, you ensure that TypeScript generates code that is compatible
+    // with Babel's handling of ES modules, which can help to avoid these issues.
+    //
+
+    // In summary, it's generally recommended to set esModuleInterop to true when using TypeScript
+    // with Babel, to ensure that your code works correctly and to avoid any compatibility issues
+    // between the two tools.
+    "esModuleInterop": true,
+    // The "strict" option enables strict type checking options.
+    "strict": true,
+    // The "jsx" option specifies the syntax to use for JSX.
+    // possible values:
+    // * "preserve" = preserve the JSX as it is in the source file
+    // * "react-native" = transform JSX to React Native code
+    // * "react" = transform JSX to React code
+    // * "react-jsx" = transform JSX to React code
+    // * "react-jsxdev" = transform JSX to React code
+    "jsx": "react-jsx"
+  },
+  // excluding folders from being included
+  // while creating `declaration` files
+  "exclude": ["./dist"]
+}
